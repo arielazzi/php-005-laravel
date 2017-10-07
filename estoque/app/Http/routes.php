@@ -12,19 +12,4 @@
 */
 
 # Criando uma nova rota
-Route::get('/', function()
-{
-	return '<h1>Primeira Lógica com laravel</h1>';
-});
-
-# Testando ambiguidade de rotas
-Route::get('/', function()
-{
-	return '<h1>Segunda Rota</h1>';
-});
-
-# Testando mais uma rota
-Route::get('/outra', function()
-{
-	return 'teste';
-});
+Route::get('/produtos', 'ProdutoController@lista');
