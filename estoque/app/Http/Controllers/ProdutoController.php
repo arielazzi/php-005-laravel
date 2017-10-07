@@ -9,9 +9,9 @@ class ProdutoController extends Controller {
 	{
 		$produtos = DB::select('select * from produtos');
 
-		if (view()->exists('listagem'))
+		if (view()->exists('produto.listagem'))
 		{
-			return view('listagem')->withProdutos($produtos);
+			return view('produto.listagem')->withProdutos($produtos);
 		}
 	}
 
@@ -23,6 +23,6 @@ class ProdutoController extends Controller {
 		{
 			return "Esse produto não existe";
 		}
-		return view('mostra')->withProduto($produto[0]);
+		return view('produto.detalhes')->withProduto($produto[0]);
 	}
 }
